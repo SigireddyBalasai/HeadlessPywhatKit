@@ -46,10 +46,10 @@ class WhatsApp:
             ec.presence_of_element_located(
                 (By.XPATH, '/html/body/div[1]/div/div/div[3]/div/div[1]/div/button')))
         element = driver.find_element(By.XPATH,
-                                           '/html/body/div[1]/div/div/div[3]/div/div[1]/div/button')
+                                      '/html/body/div[1]/div/div/div[3]/div/div[1]/div/button')
         element.click()
         element = driver.find_element(By.XPATH,
-                                           '/html/body/div[1]/div/div/div[3]/div/div[2]/div[1]/div/div')
+                                      '/html/body/div[1]/div/div/div[3]/div/div[2]/div[1]/div/div')
         print(element)
         self.driver = driver
         time.sleep(2)
@@ -63,9 +63,9 @@ class WhatsApp:
                 (By.XPATH, '/html/body/div[1]/div/div/div[4]/div/footer/div[1]/div/span[2]/div/div[2]/div['
                            '2]/button')))
         element = driver.find_element(By.XPATH,
-                                           '/html/body/div[1]/div/div/div[4]/div/footer/div[1]/div/span[2]/div/div['
-                                           '2]/div['
-                                           '2]/button')
+                                      '/html/body/div[1]/div/div/div[4]/div/footer/div[1]/div/span[2]/div/div['
+                                      '2]/div['
+                                      '2]/button')
         element.click()
         self.driver = driver
         time.sleep(2)
@@ -78,9 +78,9 @@ class WhatsApp:
             ec.presence_of_element_located(
                 (By.XPATH, '/html/body/div[1]/div/div/div[4]/div/footer/div[1]/div/span[2]/div/div[1]/div[2]/div/div')))
         element = driver.find_element(By.XPATH,
-                                           '/html/body/div[1]/div/div/div[4]/div/footer/div[1]/div/span[2]/div/div['
-                                           '1]/div['
-                                           '2]/div/div')
+                                      '/html/body/div[1]/div/div/div[4]/div/footer/div[1]/div/span[2]/div/div['
+                                      '1]/div['
+                                      '2]/div/div')
         element.click()
         path = pathlib.Path(filename)
         WebDriverWait(driver, 10).until(
@@ -88,17 +88,17 @@ class WhatsApp:
                 (By.XPATH, '/html/body/div[1]/div/div/div[4]/div/footer/div[1]/div/span[2]/div/div[1]/div['
                            '2]/div/span/div/div/ul/li[4]/button/input')))
         element = driver.find_element(By.XPATH,
-                                           '/html/body/div[1]/div/div/div[4]/div/footer/div[1]/div/span[2]/div/div['
-                                           '1]/div['
-                                           '2]/div/span/div/div/ul/li[4]/button/input')
+                                      '/html/body/div[1]/div/div/div[4]/div/footer/div[1]/div/span[2]/div/div['
+                                      '1]/div['
+                                      '2]/div/span/div/div/ul/li[4]/button/input')
         element.send_keys(str(path.resolve()))
         WebDriverWait(driver, 10).until(
             ec.presence_of_element_located(
                 (By.XPATH,
                  '/html/body/div[1]/div/div/div[2]/div[2]/span/div/span/div/div/div[2]/div/div[2]/div[2]/div/div')))
         element = driver.find_element(By.XPATH,
-                                           '/html/body/div[1]/div/div/div[2]/div[2]/span/div/span/div/div/div['
-                                           '2]/div/div[2]/div[2]/div/div')
+                                      '/html/body/div[1]/div/div/div[2]/div[2]/span/div/span/div/div/div['
+                                      '2]/div/div[2]/div[2]/div/div')
         element.click()
         self.driver = driver
         time.sleep(2)
@@ -111,9 +111,9 @@ class WhatsApp:
             ec.presence_of_element_located(
                 (By.XPATH, '/html/body/div[1]/div/div/div[4]/div/footer/div[1]/div/span[2]/div/div[1]/div[2]/div/div')))
         element = driver.find_element(By.XPATH,
-                                           '/html/body/div[1]/div/div/div[4]/div/footer/div[1]/div/span[2]/div/div['
-                                           '1]/div['
-                                           '2]/div/div')
+                                      '/html/body/div[1]/div/div/div[4]/div/footer/div[1]/div/span[2]/div/div['
+                                      '1]/div['
+                                      '2]/div/div')
         element.click()
         path_of_file = pathlib.Path(filename)
         WebDriverWait(driver, 10).until(
@@ -121,18 +121,18 @@ class WhatsApp:
                 (By.XPATH, '/html/body/div[1]/div/div/div[4]/div/footer/div[1]/div/span[2]/div/div[1]/div['
                            '2]/div/span/div/div/ul/li[1]/button/input')))
         element = driver.find_element(By.XPATH,
-                                           '/html/body/div[1]/div/div/div[4]/div/footer/div[1]/div/span[2]/div/div['
-                                           '1]/div['
-                                           '2]/div/span/div/div/ul/li[1]/button/input')
+                                      '/html/body/div[1]/div/div/div[4]/div/footer/div[1]/div/span[2]/div/div['
+                                      '1]/div['
+                                      '2]/div/span/div/div/ul/li[1]/button/input')
         element.send_keys(str(path_of_file.resolve()))
         WebDriverWait(driver, 10).until(
             ec.presence_of_element_located(
                 (By.XPATH,
                  '/html/body/div[1]/div/div/div[2]/div[2]/span/div/span/div/div/div[2]/div/div[2]/div[2]/div/div')))
         element = driver.find_element(By.XPATH,
-                                           '/html/body/div[1]/div/div/div[2]/div[2]/span/div/span/div/div/div['
-                                           '2]/div/div['
-                                           '2]/div[2]/div/div')
+                                      '/html/body/div[1]/div/div/div[2]/div[2]/span/div/span/div/div/div['
+                                      '2]/div/div['
+                                      '2]/div[2]/div/div')
         element.click()
         self.driver = driver
         time.sleep(7)
