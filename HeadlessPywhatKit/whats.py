@@ -8,10 +8,11 @@ from selenium import webdriver
 
 
 class WhatsApp:
-    def __init__(self):
+    def __init__(self,headless:bool=True):
         chrome_options = webdriver.ChromeOptions()
         chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
-        # chrome_options.add_argument("--headless")#will open headless means allow us to work without showing website
+        if headless:
+            chrome_options.add_argument("--headless")#will open headless means allow us to work without showing website
         chrome_options.add_argument('--no-sandbox')
         chrome_options.add_argument('--disable-dev-shm-usage')
         chrome_options.add_argument("user-agent=Mozilla/5.0 (X11; Linux i686; rv:77.0) Gecko/20100101 Firefox/77.0")
