@@ -1,1 +1,4 @@
-selenium~=4.7.2
+selenium~=4.7
+setuptools==65.6.3
+Flask~=2.2.2
+requests~=2.28.1

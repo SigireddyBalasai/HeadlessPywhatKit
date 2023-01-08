@@ -70,7 +70,7 @@ class WhatsApp:
         self.driver = driver
         time.sleep(2)
 
-    def send_document(self, phone: str, filename: str):
+    def send_document(self, phone: str, file_list: list[str] = None,filename:str = None,foldername:str = None):
         driver = self.driver
         phone = phone.replace(" ", "")
         driver.get(f'https://web.whatsapp.com/send?phone={phone}')
@@ -82,7 +82,7 @@ class WhatsApp:
                                       '1]/div['
                                       '2]/div/div')
         element.click()
-        path = pathlib.Path(filename)
+        print('window opened')
         WebDriverWait(driver, 60).until(
             ec.presence_of_element_located(
                 (By.XPATH, '/html/body/div[1]/div/div/div[4]/div/footer/div[1]/div/span[2]/div/div[1]/div['
@@ -91,7 +91,14 @@ class WhatsApp:
                                       '/html/body/div[1]/div/div/div[4]/div/footer/div[1]/div/span[2]/div/div['
                                       '1]/div['
                                       '2]/div/span/div/div/ul/li[4]/button/input')
-        element.send_keys(str(path.resolve()))
+        print("file menu opened")
+        if foldername:
+            file_list = [x for x in pathlib.Path(foldername).iterdir() if not x.is_dir()]
+        if filename:
+            element.send_keys(str(pathlib.Path(filename)))
+        else:
+            for i in file_list:
+                element.send_keys(str(pathlib.Path(i)))
         WebDriverWait(driver, 60).until(
             ec.presence_of_element_located(
                 (By.XPATH,
@@ -101,7 +108,7 @@ class WhatsApp:
                                       '2]/div/div[2]/div[2]/div/div')
         element.click()
         self.driver = driver
-        time.sleep(2)
+        time.sleep(10)
 
     def send_image(self, phone: str, filename: str):
         driver = self.driver

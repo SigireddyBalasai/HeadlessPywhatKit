@@ -1,1 +1,1 @@
-from HeadlessPywhatKit.whats import WhatsApp
+from HeadlessPywhatKit.app import create_app

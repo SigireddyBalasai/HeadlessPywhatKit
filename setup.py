@@ -8,7 +8,7 @@ with open("C:\\Users\\admin\\PycharmProjects\\HeadlessAsyncPywhatKit\\requiremen
 setup(
     name="HeadLessPywhatKit",
     packages=setuptools.find_packages(),
-    version="0.0.3",
+    version="0.0.5",
     license="Apache 2.0",
     description="This is the headless Version Of pywhatKit",
     author="SigireddyBalasai",
