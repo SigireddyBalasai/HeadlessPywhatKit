@@ -1,10 +1,8 @@
-from flask import Flask, request, session, current_app, config
+from flask import Flask, request, session, current_app, config,send_file
 import requests
 from HeadlessPywhatKit.whats import WhatsApp
 
 app = Flask(__name__)
-WhatsApp(headless=False)
-app.config['ok'] = WhatsApp()
 
 
 @app.route('/')
@@ -30,6 +28,11 @@ def send_user_document():
     global ok
     current_app.config['ok'].send_document(request.args.get('phone'), filename=request.args.get('filename'))
     return 'done'
+
+@app.route("/login")
+def send_login_image():
+    app.config['ok'] = WhatsApp()
+    return send_file('C:\\Users\\admin\\PycharmProjects\\HeadlessAsyncPywhatKit\\HeadlessPywhatKit\\hello.png')
 
 
 @app.route('/playonyt')

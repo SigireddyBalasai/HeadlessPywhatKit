@@ -1,11 +1,11 @@
 import os
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
-from selenium.webdriver.support import expected_conditions as ec
+from selenium.webdriver.support import expected_conditions as EC
 import time
 import pathlib
 from selenium import webdriver
-
+import climage
 
 class WhatsApp:
     def __init__(self,headless:bool=True):
@@ -27,14 +27,17 @@ class WhatsApp:
         try:
             driver.get('https://web.whatsapp.com/')
             WebDriverWait(driver, 60).until(
-                ec.presence_of_element_located((By.XPATH, "/html/body/div[1]/div/div/div[3]/div[1]/div/div[2]/div/div")))
-            WebDriverWait(driver, 60).until(
-                ec.presence_of_element_located(
-                    (By.XPATH, '//*[@id="app"]/div/div/div[3]/header/div[2]/div/span/div[4]/div')))
+                EC.presence_of_element_located((By.XPATH, '//*[@id="app"]/div/div/div[3]/div[1]/div/div/div['
+                                                          '2]/div/canvas')))
+            WebDriverWait(driver, 60).until(EC.presence_of_element_located(
+                (By.XPATH, '//*[@id="app"]/div/div/div[3]/div[1]/div/div/div[2]/div/div/span')))
+            print('qr found')
+            ok = driver.find_element(By.XPATH, '//*[@id="app"]/div/div/div[3]/div[1]/div/div/div[2]/div/canvas')
+            print(ok.screenshot("hello.png"))
             self.driver = driver
         except Exception as e:
             WebDriverWait(driver, 60).until(
-                ec.presence_of_element_located(
+                EC.presence_of_element_located(
                     (By.XPATH, '//*[@id="app"]/div/div/div[3]/header/div[2]/div/span/div[4]/div')))
             self.driver = driver
             return True
@@ -145,4 +148,6 @@ class WhatsApp:
         time.sleep(7)
 
     def __del__(self):
-        self.driver.close()
+        driver = self.driver
+        driver.close()
+        self.driver = driver
