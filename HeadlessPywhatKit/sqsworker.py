@@ -2,9 +2,9 @@
 import boto3
 import json
 import os
-#from HeadlessPywhatKit.whats import WhatsApp
+from HeadlessPywhatKit.whats import WhatsApp
 
-#wa = WhatsApp()
+wa = WhatsApp()
 
 #read credentials from keys.json
 with open('keys.json') as f:
