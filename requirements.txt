@@ -1,3 +1,4 @@
 selenium==4.7.2
 Flask~=2.2.2
 requests==2.28.2
+boto3==1.29.59
