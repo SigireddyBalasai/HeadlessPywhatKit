@@ -5,7 +5,6 @@ from selenium.webdriver.support import expected_conditions as EC
 import time
 import pathlib
 from selenium import webdriver
-import climage
 
 class WhatsApp:
     def __init__(self,headless:bool=True):
@@ -33,7 +32,7 @@ class WhatsApp:
                 (By.XPATH, '//*[@id="app"]/div/div/div[3]/div[1]/div/div/div[2]/div/div/span')))
             print('qr found')
             ok = driver.find_element(By.XPATH, '//*[@id="app"]/div/div/div[3]/div[1]/div/div/div[2]/div/canvas')
-            print(ok.screenshot("hello.png"))
+            print(ok.screenshot("qr_code.png"))
             self.driver = driver
         except Exception as e:
             WebDriverWait(driver, 60).until(
