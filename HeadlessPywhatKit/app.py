@@ -32,7 +32,7 @@ def send_user_document():
 @app.route("/login")
 def send_login_image():
     app.config['ok'] = WhatsApp()
-    return send_file('C:\\Users\\admin\\PycharmProjects\\HeadlessAsyncPywhatKit\\HeadlessPywhatKit\\hello.png')
+    return send_file('../qr_code.png')
 
 
 @app.route('/playonyt')
