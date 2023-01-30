@@ -45,7 +45,7 @@ class WhatsApp:
         driver = self.driver
         driver.get('https://web.whatsapp.com/')
         WebDriverWait(driver, 60).until(
-            ec.presence_of_element_located(
+            EC.presence_of_element_located(
                 (By.XPATH, '/html/body/div[1]/div/div/div[3]/div/div[1]/div/button')))
         element = driver.find_element(By.XPATH,
                                       '/html/body/div[1]/div/div/div[3]/div/div[1]/div/button')
@@ -61,7 +61,7 @@ class WhatsApp:
         phone = phone.replace(" ", "")
         driver.get(f'https://web.whatsapp.com/send?phone={phone}&text={message}')
         WebDriverWait(driver, 60).until(
-            ec.presence_of_element_located(
+            EC.presence_of_element_located(
                 (By.XPATH, '/html/body/div[1]/div/div/div[4]/div/footer/div[1]/div/span[2]/div/div[2]/div['
                            '2]/button')))
         element = driver.find_element(By.XPATH,
@@ -77,7 +77,7 @@ class WhatsApp:
         phone = phone.replace(" ", "")
         driver.get(f'https://web.whatsapp.com/send?phone={phone}')
         WebDriverWait(driver, 60).until(
-            ec.presence_of_element_located(
+            EC.presence_of_element_located(
                 (By.XPATH, '/html/body/div[1]/div/div/div[4]/div/footer/div[1]/div/span[2]/div/div[1]/div[2]/div/div')))
         element = driver.find_element(By.XPATH,
                                       '/html/body/div[1]/div/div/div[4]/div/footer/div[1]/div/span[2]/div/div['
@@ -86,7 +86,7 @@ class WhatsApp:
         element.click()
         print('window opened')
         WebDriverWait(driver, 60).until(
-            ec.presence_of_element_located(
+            EC.presence_of_element_located(
                 (By.XPATH, '/html/body/div[1]/div/div/div[4]/div/footer/div[1]/div/span[2]/div/div[1]/div['
                            '2]/div/span/div/div/ul/li[4]/button/input')))
         element = driver.find_element(By.XPATH,
@@ -102,7 +102,7 @@ class WhatsApp:
             for i in file_list:
                 element.send_keys(str(pathlib.Path(i)))
         WebDriverWait(driver, 60).until(
-            ec.presence_of_element_located(
+            EC.presence_of_element_located(
                 (By.XPATH,
                  '/html/body/div[1]/div/div/div[2]/div[2]/span/div/span/div/div/div[2]/div/div[2]/div[2]/div/div')))
         element = driver.find_element(By.XPATH,
@@ -117,7 +117,7 @@ class WhatsApp:
         phone = phone.replace(" ", "")
         driver.get(f'https://web.whatsapp.com/send?phone={phone}')
         WebDriverWait(driver, 60).until(
-            ec.presence_of_element_located(
+            EC.presence_of_element_located(
                 (By.XPATH, '/html/body/div[1]/div/div/div[4]/div/footer/div[1]/div/span[2]/div/div[1]/div[2]/div/div')))
         element = driver.find_element(By.XPATH,
                                       '/html/body/div[1]/div/div/div[4]/div/footer/div[1]/div/span[2]/div/div['
@@ -126,7 +126,7 @@ class WhatsApp:
         element.click()
         path_of_file = pathlib.Path(filename)
         WebDriverWait(driver, 60).until(
-            ec.presence_of_element_located(
+            EC.presence_of_element_located(
                 (By.XPATH, '/html/body/div[1]/div/div/div[4]/div/footer/div[1]/div/span[2]/div/div[1]/div['
                            '2]/div/span/div/div/ul/li[1]/button/input')))
         element = driver.find_element(By.XPATH,
@@ -135,7 +135,7 @@ class WhatsApp:
                                       '2]/div/span/div/div/ul/li[1]/button/input')
         element.send_keys(str(path_of_file.resolve()))
         WebDriverWait(driver, 60).until(
-            ec.presence_of_element_located(
+            EC.presence_of_element_located(
                 (By.XPATH,
                  '/html/body/div[1]/div/div/div[2]/div[2]/span/div/span/div/div/div[2]/div/div[2]/div[2]/div/div')))
         element = driver.find_element(By.XPATH,
