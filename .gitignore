@@ -1,1 +1,5 @@
 keys.json
+HeadlessPywhatKit/__pycache__*
+test.py
+HeadlessPywhatKit/__pycache__/sqsworker.cpython-310.pyc
+HeadlessPywhatKit/__pycache__/whats.cpython-310.pyc
